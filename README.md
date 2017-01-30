@@ -6,6 +6,7 @@
 
 node 7
 
+Backend api credentials and gmaps api keys need to be configured in src/app/server/config.json
 
 ```
 git clone git@github.com:sigfox/coverage-api-demo.git
