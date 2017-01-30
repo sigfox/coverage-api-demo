@@ -85,7 +85,6 @@ class CoverageMeter extends Component {
           score={quality.score}
           redundancy={quality.margins.reduce((a, b) => {return b > 0 ? a+= 1 : a}, 0)}
           />
-        {quality.score} {quality.margins.join(', ')}
       </div>
     );
   }
