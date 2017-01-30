@@ -16,8 +16,8 @@ class CoveragePage extends Component {
         <HeaderBar><h1>Coverage API demo</h1></HeaderBar>
       <PageSection>
         <Tabs centered>
-          <Tab to="/single">Single point</Tab>
-          <Tab to="/batch">Batch</Tab>
+          <Tab to="/single">Single address</Tab>
+          <Tab to="/batch">Batch process</Tab>
         </Tabs>
       </PageSection>
       { this.props.children }

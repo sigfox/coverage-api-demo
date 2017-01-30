@@ -74,6 +74,7 @@ export function checkCoverage(coords, resolve, reject) {
     type: 'api',
     types: [COVERAGE_REQUEST, COVERAGE_REQUEST_SUCCESS, COVERAGE_REQUEST_ERROR],
     apiPromise: (client) => client.get('/predictions', {params: coords}),
+    coords,
     resolve,
     reject
   }
@@ -145,6 +146,10 @@ export function reducer(state = initialState, action) {
       const address = _.find(batchGeocodeSuccess.addresses, {address: action.address})
       address.coords = action.coords.toJSON();
       return Object.assign({}, state, {batchCoverage: batchGeocodeSuccess});
+
+    case COVERAGE_REQUEST:
+      const singleCoverageRequest = Object.assign({}, state.singleCoverage, {coords: action.coords});
+      return Object.assign({}, state, {singleCoverage: singleCoverageRequest})
 
     case COVERAGE_REQUEST_SUCCESS:
       const singleCoverageSuccess = Object.assign({}, state.singleCoverage, {coverage: action.result});

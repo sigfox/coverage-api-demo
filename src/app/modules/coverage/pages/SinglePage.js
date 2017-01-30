@@ -17,9 +17,22 @@ class SinglePage extends Component {
     e.preventDefault();
     const {dispatch} = this.props;
     dispatch(geocode(this.state.address, (coords) => {
-      console.log('coords', coords);
       dispatch(checkCoverage(coords))
     }))
+  }
+  locate = (err, result) => {
+    const {dispatch} = this.props;
+    if (err) {
+      console.error(err)
+      alert('an error has occured, see developper console')
+    } else {
+      const coords = {
+        lat: result.coords.latitude,
+        lng: result.coords.longitude
+      }
+      dispatch(checkCoverage(coords))
+      console.info(result)
+    }
   }
   onType = (e) => {
     this.setState({
@@ -43,9 +56,8 @@ class SinglePage extends Component {
       }]
     }
     return (<PageSection className="singlePointPage">
-      <h2>Query a single address</h2>
       <p>
-        <GeolocationButton currentPositionCallback={(err, result) => console.log(err, result)}>Locate Me</GeolocationButton>
+        <GeolocationButton currentPositionCallback={this.locate}>Locate Me</GeolocationButton>
         <em>Works best on mobile phones</em>
       </p>
       <p>&nbsp;</p>

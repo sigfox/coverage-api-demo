@@ -16,9 +16,14 @@ class GeolocationButton extends Component {
     currentPositionCallback: PropTypes.func.isRequired
   }
 
+  state = {
+    processing: false
+  }
+
   localise = () => {
     const { currentPositionCallback = () => {} } = this.props;
     const localisation = new Promise((resolve, reject) => {
+      this.setState({processing: true});
       if(navigator && navigator.geolocation && navigator.geolocation.getCurrentPosition) {
         navigator.geolocation.getCurrentPosition(resolve, reject)
       } else {
@@ -27,15 +32,20 @@ class GeolocationButton extends Component {
     });
     localisation
       .then(result => {
+        this.setState({processing: false});
         currentPositionCallback(null, result);
       })
-      .catch(error => currentPositionCallback(error))
+      .catch(error => {
+        this.setState({processing: false});
+        currentPositionCallback(error);
+      })
   }
 
   render() {
     const { children, ...props } = this.props;
+    const {processing} = this.state;
     delete props.currentPositionCallback;
-    return (<Button {...props} onClick={this.localise}>{children}</Button>)
+    return (<Button {...props} onClick={this.localise} disabled={processing}>{processing ? 'processing...' : children}</Button>)
   }
 }
 
