@@ -1,0 +1,161 @@
+@import "vars";
+
+.btn {
+  display: inline-block;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  font-size: 14px;
+  line-height: normal;
+  font-family: $titles-font;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 12px;
+  text-align: center;
+  transition: all .2s;
+  &, .no-touchable &:hover {
+    color: white;
+  }
+
+  .icon {
+    font-size: 16px;
+    margin: -2px 0 -2px -7px;
+  }
+
+  &-large {
+    padding: 12px;
+    font-size: 15px;
+  }
+
+  &-small {
+    padding: 12px;
+    font-size: 12px;
+  }
+
+  &-extra-small {
+    padding: 5px 12px;
+    font-size: 12px;
+  }
+
+  &-red {
+    background: $sigfox-red;
+    .no-touchable &:hover:not([disabled]) {
+      background: lighten($sigfox-red, 5);
+    }
+  }
+
+  &-orange {
+    background: $sigfox-orange;
+    .no-touchable &:hover:not([disabled]) {
+      background: lighten($sigfox-orange, 5);
+    }
+  }
+
+  &-green {
+    background: $sigfox-green;
+    .no-touchable &:hover:not([disabled]) {
+      background: lighten($sigfox-green, 5);
+    }
+  }
+
+  &-blue {
+    background: $sigfox-blue;
+    &:hover:not([disabled]) {
+      background: lighten($sigfox-blue, 5);
+    }
+  }
+
+  &-night-blue {
+    background: $sigfox-night-blue;
+    .no-touchable &:hover:not([disabled]) {
+      background: lighten($sigfox-night-blue, 5);
+    }
+  }
+
+  &-purple {
+    background: $sigfox-purple;
+    .no-touchable &:hover:not([disabled]) {
+      background: lighten($sigfox-purple, 5);
+    }
+  }
+  &-dark-grey {
+    background: $sigfox-dark-grey;
+    .no-touchable &:hover:not([disabled]) {
+      background: lighten($sigfox-dark-grey, 5);
+    }
+  }
+
+  &-grey {
+    background: $sigfox-grey;
+    .no-touchable &:hover:not([disabled]) {
+      background: lighten($sigfox-grey, 5);
+    }
+  }
+
+  &-white {
+    background: #fff;
+    &, .no-touchable &:hover {
+      color: $sigfox-dark-grey;
+    }
+    .no-touchable &:hover:not([disabled]) {
+      color: lighten($sigfox-dark-grey, 5);
+    }
+  }
+
+  &-inverted {
+    background: #fff !important;
+    &.btn-grey {
+      &, .no-touchable &:hover {
+        color: $sigfox-grey;
+      }
+      border-color: $sigfox-grey;
+    }
+    &.btn-white {
+      &, .no-touchable &:hover {
+        color: #FFF;
+      }
+      border-color: #FFF;
+      background: transparent !important;
+    }
+    &.btn-orange {
+      &, .no-touchable &:hover {
+        color: $sigfox-orange;
+      }
+      border-color: $sigfox-orange;
+    }
+    &.btn-red {
+      &, .no-touchable &:hover {
+        color: $sigfox-red;
+      }
+      border-color: $sigfox-red;
+    }
+    &.btn-purple {
+      &, .no-touchable &:hover {
+        color: $sigfox-purple;
+      }
+      border-color: $sigfox-purple;
+    }
+    &.btn-blue {
+      &, .no-touchable &:hover {
+        color: $sigfox-blue;
+      }
+      border-color: $sigfox-blue;
+    }
+    &.btn-night-blue {
+      &, .no-touchable &:hover {
+        color: $sigfox-night-blue;
+      }
+      border-color: $sigfox-night-blue;
+    }
+    &.btn-green {
+      &, .no-touchable &:hover {
+        color: $sigfox-dark-green;
+      }
+      border-color: $sigfox-dark-green;
+    }
+  }
+
+  &:disabled, &-disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+}

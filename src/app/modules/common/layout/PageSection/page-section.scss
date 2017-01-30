@@ -1,0 +1,153 @@
+@import "vars";
+
+.page-section {
+  padding: 25px 0 48px;
+  @media (min-width: $screen-sm-min) {
+    padding: 32px 0 48px;
+  }
+  background: #fff;
+  &.grey {
+    background: #fcfcfc;
+  }
+  &.striped-grey-first {
+    &:nth-child(odd) {
+      background: #fcfcfc;
+    }
+    &:nth-child(even) {
+      background: white;
+    }
+  }
+  &.striped-white-first {
+    &:nth-child(odd) {
+      background: white;
+    }
+    &:nth-child(even) {
+      background: #fcfcfc;
+    }
+  }
+
+  &--without-clear {
+    .section-inner:after {
+      content: none;
+    }
+  }
+
+  &--related-section {
+    position: relative;
+    &__top {
+      @include section-inner();
+      height: 4px;
+
+      .arrow {
+        display: block;
+        position: relative;
+        left: 10px;
+        top: -39px;
+        width: 0;
+        height: 0;
+        z-index: 2;
+        @media (min-width: $screen-sm-min) {
+          top: -47px;
+        }
+        &:before {
+          content: "";
+          border-style: solid;
+          border-width: 0 15px 15px 15px;
+          border-color: transparent transparent #ddd transparent;
+          width: 0;
+          height: 0;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+        &:after {
+          content: "";
+          border-style: solid;
+          border-width: 0 15px 15px 15px;
+          border-color: transparent transparent #f3f3f3 transparent;
+          width: 0;
+          height: 0;
+          position: absolute;
+          top: 1px;
+          left: 0;
+        }
+      }
+      &:after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        height: 300px;
+        border-top: 1px solid #ddd;
+        background: linear-gradient(to bottom, adjust-color(#f3f3f3, $alpha: 1) 0%, adjust-color(#f5f5f5, $alpha: -1) 100%);
+      }
+
+    }
+    .section-inner {
+      position: relative;
+    }
+  }
+
+  &--linked {
+    position: relative;
+    padding-top: 59px;
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      height: 60px;
+      border-left: 1px solid $page-section-border-color;
+    }
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      margin: 0 -10px;
+      width: 20px;
+      border-top: 1px solid $page-section-border-color;
+    }
+
+    .sectionTitle {
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 18px;
+      padding: 40px 0 30px 0;
+      margin: 0 0 80px 0;
+      position: relative;
+      &:before {
+        padding-top: 2px;
+        padding-left: 1px;
+        content: '';
+        font-size: 18px;
+        text-align: center;
+        background: url('pixelGreen.png') no-repeat 1px 1px;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        line-height: 0;
+        width: 8px;
+        height: 8px;
+        border-radius: 4px;
+        border: 1px solid $page-section-border-color;
+        margin: 0 -4px;
+      }
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        margin: 0 -45px;
+        width: 90px;
+        border-bottom: 3px solid $page-section-border-color;
+      }
+    }
+  }
+
+}

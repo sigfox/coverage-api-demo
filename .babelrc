@@ -1,0 +1,10 @@
+{
+  "presets": ["es2017-node7", "react"],
+  "plugins": [
+    "react-hot-loader/babel",
+    "add-module-exports",
+    "transform-es2015-destructuring",
+    "transform-es2015-parameters",
+    "transform-es2015-spread"
+  ]
+}

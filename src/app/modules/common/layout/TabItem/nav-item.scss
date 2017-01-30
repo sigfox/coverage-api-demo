@@ -1,0 +1,52 @@
+@import "vars";
+
+.nav {
+  .tab-item {
+    display: block;
+    float: none;
+    border-bottom: 1px solid $nav-border-inactive-color;
+    border-left: 1px solid $nav-border-inactive-color;
+    margin-left: 5px;
+    &:first-child {
+      border-top: 1px solid $nav-border-inactive-color;
+    }
+
+    &--active {
+      border: 1px solid $nav-border-color;
+      border-left-color: $nav-border-active-color;
+      border-right-color: white;
+      border-left-width: 3px;
+      margin-right: -1px;
+      margin-left: 0;
+    }
+    a {
+      // layout
+      display: block;
+      line-height: 18px;
+      // box model
+      padding-bottom: 8px;
+      padding-top: 10px;
+      padding-right: 6px;
+      padding-left: 8px;
+      // visual
+      font-family: $titles-font;
+      color: $text-dark-grey;
+      border: solid 1px transparent;
+      border-bottom: 0;
+      // typo
+      text-transform: uppercase;
+      // misc
+      cursor: pointer;
+      // events
+      .no-touchable &:hover {
+        color: #999;
+      }
+    }
+  }
+}
+
+.nav-bar {
+  .tab-item {
+    display: inline-block;
+  }
+}

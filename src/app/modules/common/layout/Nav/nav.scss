@@ -1,0 +1,8 @@
+@import "vars";
+
+.nav {
+  @include span(3 of 12);
+  padding: 29px 0;
+  border-right: 1px solid $nav-border-color;
+
+}

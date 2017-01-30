@@ -1,0 +1,33 @@
+@import 'normalize';
+@import 'vars';
+
+.table {
+  border-left: 3px solid $sigfox-green;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.13);
+  tr {
+    td, th {
+      min-height: 40px;
+      height: 40px;
+      border-right: 1px solid $border-light-grey;
+      padding: 0 12px;
+      vertical-align: middle;
+      text-align: center;
+    }
+  }
+}
+
+.table-bordered {
+  td, th {
+    border-bottom: 1px solid $border-light-grey;
+  }
+}
+
+.table-striped-grey {
+  tbody tr:nth-child(odd) {
+    background: $border-light-grey;
+  }
+}
+.page-section {
+  max-width: 800px;
+  margin: auto;
+}

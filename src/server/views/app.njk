@@ -1,0 +1,20 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+  {{ helmet.title|safe }}
+  {{ helmet.link|safe }}
+  {{ helmet.meta|safe }}
+{% endblock %}
+
+{% block content %}
+  <div id="app" class="{{config.version}}">{{html|safe}}</div>
+  <script type="text/javascript">
+    window.__INITIAL_STATE__ = {{state|dump|safe}};
+    window.__CLIENT_CONFIG__ = {{state.config|dump|safe}};
+  </script>
+  <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key={{state.config.googleApiKey}}">
+    </script>
+  <script async defer type="text/javascript" src="/assets/app.{{config.version}}.js"></script>
+  <div id="vendor-load-scripts"></div>
+{% endblock %}

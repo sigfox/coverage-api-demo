@@ -1,0 +1,9 @@
+@import "vars";
+
+.content {
+
+}
+
+.nav + .content {
+  @include span(last 9 of 12);
+}

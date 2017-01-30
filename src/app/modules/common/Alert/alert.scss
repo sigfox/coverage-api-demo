@@ -1,0 +1,50 @@
+@import "vars";
+
+.alert {
+  @include break;
+  font-family: $main-font;
+  padding: 15px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  margin-bottom: 4px;
+  margin-top: 4px;
+  a {
+    color: inherit;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  &__title {
+    font-weight: bold;
+    margin: 0 0 3px 0;
+    padding: 0;
+  }
+  &__text {
+    font-weight: normal;
+  }
+  &--success {
+    color: $alert-success-text-color;
+    border-color: $alert-success-border-color;
+    background-color: $alert-success-background-color;
+  }
+  &--info {
+    color: $alert-info-text-color;
+    border-color: $alert-info-border-color;
+    background-color: $alert-info-background-color;
+  }
+  &--warning {
+    color: $alert-warning-text-color;
+    border-color: $alert-warning-border-color;
+    background-color: $alert-warning-background-color;
+  }
+  &--danger {
+    color: $alert-danger-text-color;
+    border-color: $alert-danger-border-color;
+    background-color: $alert-danger-background-color;
+  }
+  &.small {
+    margin: 0px;
+  }
+  &.xsmall {
+    padding: 10px;
+  }
+}

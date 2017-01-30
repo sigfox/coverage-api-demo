@@ -1,0 +1,11 @@
+{
+	"preset": "airbnb",
+  "plugins": [
+    "import-spaces"
+  ],
+	"maximumLineLength": 120,
+  "requireTrailingComma": false,
+  "requireImportSpaces": true,
+  "requirePaddingNewLinesAfterBlocks" : { "allExcept": ["inProperties"] },
+  "requireSpaceBeforeObjectValues": true
+}

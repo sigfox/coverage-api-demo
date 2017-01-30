@@ -1,0 +1,18 @@
+# Include your project-specific ignores in this file
+# Read about how to use .gitignore: https://help.github.com/articles/ignoring-files
+
+build
+node_modules
+ncp-debug.log
+npm-debug.log
+
+#deployment specifics
+.version
+
+#IDE specifics
+.idea
+.jshintrc
+.vscode
+
+#MAC OS
+.DS_Store

@@ -1,0 +1,240 @@
+@import "susy";
+
+// grid
+$suzy: (
+  columns: 12,
+  container: 1200px,
+  gutters: 0.632,
+  global-box-sizing: border-box
+);
+@include layout($suzy);
+
+// global
+$main-font: "OpenSans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$alt-font: "Brandon", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$titles-font: "Brandon", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+// text-colors 8A959E
+
+$text-light-grey: #8A959E;
+$text-dark-grey: #4a4a4a;
+
+$border-light-grey: #ededed;
+
+// modal
+$modal-title-color: #8291a8;
+
+// forms
+$form-label-color: #8291a8;
+$form-control-background-color: #fdfdfe;
+//$form-control-background-color: #fdfeff;
+$form-control-text-color: #333;
+$form-control-border-color: #bfc3ce;
+// form disable
+$form-disable-background-color: #f9f9f9;
+$form-disable-text-color: #aaa;
+$form-disable-border-color: #ccc;
+
+// header
+$header-separator-color: #8291a8;
+
+// general colors:
+$sigfox-orange: #FFA000;
+$sigfox-red: #D05353;
+// $sigfox-purple: #230066;
+$sigfox-purple: #8024FF;
+$sigfox-light-purple: lighten($sigfox-purple, 25%);
+$sigfox-dark-purple: darken($sigfox-purple, 5%);
+$sigfox-grey: #9ea9bb;
+//$sigfox-green: #4182ff;
+//$sigfox-green: #00DFFF;
+//$sigfox-green: #00bd71;
+$sigfox-green: #00b873;
+$sigfox-blue: #4182ff;
+$sigfox-dark-blue: darken($sigfox-blue, 20%);
+$sigfox-dark-green: darken($sigfox-green, 5%);
+$sigfox-night-blue: #230066;
+$sigfox-dark-grey: #4a4a4a;
+
+// page section
+$page-section-border-color: $sigfox-blue;
+
+// navs
+$nav-border-color: #ddd;
+$nav-border-inactive-color: #eee;
+$nav-border-active-color: $sigfox-dark-green;
+
+$nav-menu-item-color: #4a4a4a;
+$nav-menu-item-hover-color: #8A959E;
+$nav-bar-vertical-background: adjust-color($sigfox-night-blue, $saturation: -60);
+
+// status colors:
+$state-success-text-color: #3c763d;
+// $sigfox-green: #029885;
+$state-success-background-color: adjust-color($state-success-text-color,  $lightness: +58%);
+$state-success-border-color: darken(adjust-hue($state-success-background-color, -10), 5%);
+
+$state-info-text-color: #31708f;
+$state-info-background-color: adjust-color($state-info-text-color,  $lightness: +52%);
+$state-info-border-color: darken(adjust-hue($state-info-background-color, -10), 7%);
+
+$state-warning-text-color: #FFA000;
+$state-warning-background-color: adjust-color($state-warning-text-color,  $lightness: +40%);
+$state-warning-border-color: darken(adjust-hue($state-warning-background-color, -10), 5%);
+
+$state-danger-text-color: #a94442;
+$state-danger-background-color: #f2dede;
+$state-danger-background-color-odd: #dccece;
+$state-danger-border-color: darken(adjust-hue($state-danger-background-color, -10), 5%);
+
+$alert-success-background-color: $state-success-background-color;
+$alert-success-text-color: $state-success-text-color;
+$alert-success-border-color: $state-success-border-color;
+
+$alert-info-background-color: $state-info-background-color;
+$alert-info-text-color: $state-info-text-color;
+$alert-info-border-color: $state-info-border-color;
+
+$alert-warning-background-color: $state-warning-background-color;
+$alert-warning-text-color: $state-warning-text-color;
+$alert-warning-border-color: $state-warning-border-color;
+
+$alert-danger-background-color: $state-danger-background-color;
+$alert-danger-text-color: $state-danger-text-color;
+$alert-danger-border-color: $state-danger-border-color;
+
+// tunnel steps
+$tunnel-disable-step : lighten($sigfox-grey, 24);
+$tunnel-disable-step-text : lighten($sigfox-grey, 12);
+$tunnel-content-border: #e4e5e8;
+$tunnel-related-content-background: #fcfcfc;
+
+// fieldset container
+$fieldset-border : lighten($sigfox-grey, 27);
+
+// rcz zones
+$zone1-color : $sigfox-green;
+$zone1-color--dark : darken($zone1-color, 10%);
+$zone1-color--light : adjust-color($zone1-color,  $lightness: +10%, $alpha: -0.9);
+$zone2-color : $sigfox-dark-blue;
+$zone2-color--dark : darken($zone2-color, 10%);
+$zone2-color--light : adjust-color($zone2-color,  $lightness: +10%, $alpha: -0.9);
+$zone3-color : $sigfox-orange;
+$zone3-color--dark : darken($zone3-color, 10%);
+$zone3-color--light : adjust-color($zone3-color,  $lightness: +10%, $alpha: -0.9);
+$zone4-color : $sigfox-purple;
+$zone4-color--dark : darken($zone4-color, 10%);
+$zone4-color--light : adjust-color($zone4-color,  $lightness: +10%, $alpha: -0.9);
+
+//== Media queries breakpoints
+//
+//## Define the breakpoints at which your layout will change, adapting to different screen sizes.
+
+$screen-xs-min: 580px;
+
+// Small screen / tablet
+//** Deprecated `$screen-sm` as of v3.0.1
+$screen-sm:                  768px !default;
+$screen-sm-min:              $screen-sm !default;
+//** Deprecated `$screen-tablet` as of v3.0.1
+$screen-tablet:              $screen-sm-min !default;
+
+// Medium screen / desktop
+//** Deprecated `$screen-md` as of v3.0.1
+$screen-md:                  1024px !default;
+$screen-md-min:              $screen-md !default;
+//** Deprecated `$screen-desktop` as of v3.0.1
+$screen-desktop:             $screen-md-min !default;
+
+// Large screen / wide desktop
+//** Deprecated `$screen-lg` as of v3.0.1
+$screen-lg:                  1280px !default;
+$screen-lg-min:              $screen-lg !default;
+$screen-xl-min:              $screen-lg + 100 !default;
+//** Deprecated `$screen-lg-desktop` as of v3.0.1
+$screen-lg-desktop:          $screen-lg-min !default;
+
+// So media queries don't overlap when required, provide a maximum
+$screen-xxs-max:              ($screen-xs-min - 1) !default;
+$screen-xs-max:              ($screen-sm-min - 1) !default;
+$screen-sm-max:              ($screen-md-min - 1) !default;
+$screen-md-max:              ($screen-lg-min - 1) !default;
+
+//== Container sizes
+//
+//## Define the maximum width of `.container` for different screen sizes.
+
+// Small screen / tablet
+$container-tablet:             720px !default;
+//** For `$screen-sm-min` and up.
+$container-sm:                 $container-tablet !default;
+
+// Medium screen / desktop
+$container-desktop:            960px !default;
+//** For `$screen-md-min` and up.
+$container-md:                 $container-desktop !default;
+
+// Large screen / wide desktop
+$container-large-desktop:      1200px !default;
+//** For `$screen-lg-min` and up.
+$container-lg:                 $container-large-desktop !default;
+
+@mixin title() {
+  font-family: $titles-font;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+@mixin section-inner() {
+  display: block;
+  @media (max-width: $screen-xs-max) {
+    margin: 0 15px;
+  }
+  @media (min-width: $screen-sm-min) {
+    @include container($container-sm);
+    width:$container-sm;
+  }
+
+  @media (min-width: $screen-md-min) {
+    @include container($container-md);
+    width:$container-md;
+  }
+
+  /* Large devices (large desktops, 1200px and up) */
+  @media (min-width: $screen-lg-min) {
+    @include container($container-lg);
+    width:$container-lg;
+  }
+  &:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
+@mixin icon-with-text($icon-font-size) {
+  // for no flexbox support
+  display: inline-block;
+  display: flex !important;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
+  margin-bottom: 5px;
+  .icon {
+    display:inline-block;
+    font-size: $icon-font-size;
+    position: relative;
+    top: $icon-font-size / 7.5;
+    margin-right: $icon-font-size / 5;
+    vertical-align: middle;
+    &:before {
+      margin-left: 0;
+      vertical-align: baseline;
+      margin-right: 0;
+    }
+  }
+  span {
+    position: relative;
+    top: $icon-font-size / 5.5;
+  }
+}
