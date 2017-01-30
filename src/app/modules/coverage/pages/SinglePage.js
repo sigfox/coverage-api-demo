@@ -64,8 +64,7 @@ class SinglePage extends Component {
           <option value={2}>2</option>
           <option value={3}>3</option>
         </select>
-        </label>
-  <label>Device Usage <select value={deviceUsage} onChange={this.changeDeviceUsage}>
+        </label> <label>Device Usage <select value={deviceUsage} onChange={this.changeDeviceUsage}>
     <option value="outdoor">outdoor</option>
     <option value="indoor">indoor</option>
     <option value="deepIndoor">deep indoor</option>
