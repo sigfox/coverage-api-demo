@@ -27,6 +27,23 @@
     background: $border-light-grey;
   }
 }
+.header-bar .section-inner {
+  width: 100%;
+  max-width: 800px;
+  margin:auto;
+  padding: 8px;
+  h1 {
+    font: {
+      size: 18px;
+      weight: lighter;
+    }
+    text-transform: uppercase;
+    color: #4a4a4a
+  }
+}
+.page {
+  margin-top: 80px;
+}
 .page-section {
   max-width: 800px;
   margin: auto;

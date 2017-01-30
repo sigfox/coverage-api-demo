@@ -1,0 +1,90 @@
+@import "vars";
+
+.header-bar {
+  position: fixed;
+  height: 50px;
+  background: white;
+  z-index: 300;
+  border-bottom: 1px solid #ededed;
+  right: 0;
+  left: 0;
+  top: 0;
+
+  @media (max-width: $screen-xs-max) {
+    .product-page & {
+      &, .bm-burger-button {
+        position: absolute;
+      }
+    }
+  }
+
+  .section-inner {
+    display: table;
+    white-space: nowrap;
+    & > * {
+      display: table-cell;
+      vertical-align: middle;
+    }
+  }
+
+  .header-search {
+    width: 100%;
+    padding: 0 12px;
+  }
+
+  .header-logo {
+    font-size: 0;
+    min-width: 120px;
+    width: 120px;
+    .logo {
+      display: inline-block;
+      height: 30px;
+      width: 100%;
+      background: {
+        image: url(./sigfox.png);
+        position: left center;
+        repeat: no-repeat;
+        size: contain;
+      }
+    }
+  }
+  @media (max-width: $screen-xs-min) {
+    background: transparent;
+    &-opened {
+      bottom: 0;
+      height: auto;
+    }
+    .section-inner {
+      display: block;
+      padding: 0 15px;
+      margin: 0;
+      height: 50px;
+      border-bottom: 1px solid #ededed;
+      background: white;
+      > * {
+        display: inline-block;
+      }
+    }
+    .header-bar-nav {
+      position: absolute;
+      left: 0;
+    }
+    .header-search {
+      float: right;
+      z-index: 1;
+      width: 50px;
+      padding: 0;
+    }
+    .header-logo {
+      position: absolute;
+      left: 50px;
+      right: 50px;
+      top: 9px;
+      text-align: center;
+      width: auto;
+      .logo {
+        width: 120px;
+      }
+    }
+  }
+}

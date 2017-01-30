@@ -43,7 +43,7 @@ class SinglePage extends Component {
       }]
     }
     return (<PageSection className="singlePointPage">
-      <h1>Single address</h1>
+      <h2>Query a single address</h2>
       <p>
         <GeolocationButton currentPositionCallback={(err, result) => console.log(err, result)}>Locate Me</GeolocationButton>
         <em>Works best on mobile phones</em>
