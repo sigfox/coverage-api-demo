@@ -4,7 +4,7 @@
 
 ### usage
 
-node 7
+node 7 is required !
 
 Backend api credentials and gmaps api keys need to be configured in src/app/server/config.json
 
