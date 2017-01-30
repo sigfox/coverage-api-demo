@@ -58,8 +58,9 @@ class SinglePage extends Component {
     return (<PageSection className="singlePointPage">
       <p>
         <GeolocationButton currentPositionCallback={this.locate}>Locate Me</GeolocationButton>
-        <em>Works best on mobile phones</em>
       </p>
+      <p className="locate-hint">
+        <em>(Works best on mobile phones)</em></p>
       <p>&nbsp;</p>
       <p>Or enter an address here :</p>
       <p>
