@@ -17,7 +17,7 @@ class CoverageMeter extends Component {
 
   static defaultProps = {
     objectClass: 0,
-    usage: 'indoor',
+    usage: 'outdoor',
     config: {
       malus: {
         outdoor: [0, 4, 8, 12],
@@ -26,6 +26,8 @@ class CoverageMeter extends Component {
       }
     }
   }
+
+
 
   calculateQuality = () => {
     const { margins, objectClass, usage, config } = this.props;

@@ -22,6 +22,9 @@ export const COVERAGE_BATCH_REQUEST_ERROR = 'COVERAGE_BATCH_REQUEST_ERROR';
 export const PARSED_LIST_RESULT = 'PARSED_LIST_RESULT';
 export const CLEAR_PARSED_LIST = 'CLEAR_PARSED_LIST';
 
+export const CHANGE_DEVICE_CLASS = 'CHANGE_DEVICE_CLASS';
+export const CHANGE_DEVICE_USAGE = 'CHANGE_DEVICE_USAGE';
+
 export const initialState = {
   singleCoverage: {
     geocoding: false,
@@ -36,6 +39,23 @@ export const initialState = {
     geocodeError: false,
     finished: false,
     testing: false
+  },
+    deviceClass: 0,
+    deviceUsage: 'outdoor'
+}
+
+export function changeDeviceClass(deviceClass){
+  const newClass = parseInt(deviceClass, 10);
+  return {
+    type: CHANGE_DEVICE_CLASS,
+    value: newClass
+  }
+}
+
+export function changeDeviceUsage(usage) {
+  return {
+    type: CHANGE_DEVICE_USAGE,
+    value: usage
   }
 }
 
@@ -158,6 +178,11 @@ export function reducer(state = initialState, action) {
 
     case CLEAR_PARSED_LIST:
       return Object.assign({}, state, {batchCoverage: initialState.batchCoverage});
+
+    case CHANGE_DEVICE_CLASS:
+      return Object.assign({},state, {deviceClass: action.value});
+    case CHANGE_DEVICE_USAGE:
+      return Object.assign({},state, {deviceUsage: action.value});
     default: return state;
   }
 }

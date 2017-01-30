@@ -7,7 +7,7 @@ import CoverageMeter from 'common/CoverageMeter';
 import GoogleMap from 'common/GoogleMap';
 import Button from 'common/Button';
 
-import {geocode, checkCoverage} from 'coverage';
+import {geocode, checkCoverage, changeDeviceClass, changeDeviceUsage} from 'coverage';
 
 class SinglePage extends Component {
   state = {
@@ -26,8 +26,15 @@ class SinglePage extends Component {
       address: e.target.value
     })
   }
+  changeDeviceClass = (e) => {
+    this.props.dispatch(changeDeviceClass(e.target.value))
+  }
+  changeDeviceUsage = (e) =>(
+    this.props.dispatch(changeDeviceUsage(e.target.value))
+  )
   render(){
-    const {coverage: {geocoding, coords, address, coverage}} = this.props;
+    const {coverage: {geocoding, coords, address, coverage}, deviceClass, deviceUsage} = this.props;
+    console.log(deviceClass, deviceUsage)
     let markers = [];
     if(coords) {
       markers = [{
@@ -36,19 +43,40 @@ class SinglePage extends Component {
       }]
     }
     return (<PageSection className="singlePointPage">
-      <h1>Single point</h1>
+      <h1>Single address</h1>
       <p>
         <GeolocationButton currentPositionCallback={(err, result) => console.log(err, result)}>Locate Me</GeolocationButton>
         <em>Works best on mobile phones</em>
       </p>
+      <p>&nbsp;</p>
       <p>Or enter an address here :</p>
       <p>
         <form onSubmit={this.geocode}>
-          <input type="text" value={this.state.address} onChange={this.onType} />
-          <Button type="submit" onClick={this.geocode} disabled={geocoding}>{geocoding ? 'Processing...' : 'Test this address'}</Button>
+          <input type="text" value={this.state.address} onChange={this.onType}
+          /> <Button type="submit" onClick={this.geocode} disabled={geocoding}>{geocoding ? 'Processing...' : 'Test this address'}</Button>
         </form>
       </p>
-      {coverage && <CoverageMeter margins={coverage.margins} objectClass={0} usage="indoor" />}
+      <div className="device-config">
+      <label>
+        Device class <select value={deviceClass} onChange={this.changeDeviceClass}>
+          <option value={0}> 0</option>
+          <option value={1}>1</option>
+          <option value={2}>2</option>
+          <option value={3}>3</option>
+        </select>
+        </label>
+  <label>Device Usage <select value={deviceUsage} onChange={this.changeDeviceUsage}>
+    <option value="outdoor">outdoor</option>
+    <option value="indoor">indoor</option>
+    <option value="deepIndoor">deep indoor</option>
+  </select></label>
+      </div>
+      {coverage &&
+        <div>
+        <p>Signal strength and robustness :
+        <CoverageMeter margins={coverage.margins} objectClass={deviceClass} usage={deviceUsage} />
+        </p>
+        </div>}
       <div>
         {coords && <GoogleMap
           onMapLoad={() => {}}
@@ -63,4 +91,8 @@ class SinglePage extends Component {
   }
 }
 
-export default connect(state => ({coverage: state.coverage.singleCoverage}))(SinglePage);
+export default connect(state => ({
+  coverage: state.coverage.singleCoverage,
+  deviceClass: state.coverage.deviceClass,
+  deviceUsage: state.coverage.deviceUsage
+}))(SinglePage);
