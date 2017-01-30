@@ -12,6 +12,6 @@ Backend api credentials and gmaps api keys need to be configured in src/app/serv
 git clone git@github.com:sigfox/coverage-api-demo.git
 cd coverage-api-demo
 npm install
-npm build
+npm run build
 npm start
 ```
