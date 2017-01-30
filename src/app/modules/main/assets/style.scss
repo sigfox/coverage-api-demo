@@ -31,3 +31,12 @@
   max-width: 800px;
   margin: auto;
 }
+
+input[type=text] {
+  line-height: 39px;
+  padding: 1px 12px;
+  height: 39px;
+  border: 1px solid #bfc3ce;
+  border-radius: 6px;
+  width: 300px;
+}
