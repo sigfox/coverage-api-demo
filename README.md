@@ -15,3 +15,4 @@ npm install
 npm run build
 npm start
 ```
+and open http://localhost:4000/
