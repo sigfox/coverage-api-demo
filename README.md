@@ -1,5 +1,7 @@
 # Coverage API demo
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/sigfox/coverage-api-demo.svg)](https://greenkeeper.io/)
+
 ## this code is only for demonstration purposes
 
 ### usage
